@@ -3,25 +3,24 @@
 <script>alert("Found an egg!");</script>
 <html>
   <script>
-    function test(){
-<!--  var req=new XMLHttpRequest();  -->
-<!--	req.open("get","https://fat-parrot.github.io/nest/egg"); -->
-	    
-	    alert("Found an egg!");
+    function getData(){
+        var req=new XMLHttpRequest();
+ 	req.open("get","https://fat-parrot.github.io/nest/egg");
 	
-<!--      req.onload=function(){                                 -->
-<!--	var content=document.getElementById("content");          -->
-<!--	content.innerHTML=this.responseText;                     -->
-<!--	alert(this.responseText);                                -->
+        req.onload=function(){                                 
+ 	var content=document.getElementById("content");         
+ 	content.innerHTML=this.responseText;                    
+ 	alert(this.responseText);                                
 	                     };                             
-<!--	req.send();                                              -->
+	req.send();  }
+	    
   </script>
   
   <!-- 主畫面如下 -->
 <body> 
 <h3>Egg</h3>
 <div>
-  <span onclick ="test();">hatch!</span>
+  <span onclick ="getData();">hatch!</span>
     </div>
 
 <div id="content"></div>
