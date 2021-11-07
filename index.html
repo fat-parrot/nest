@@ -1,12 +1,21 @@
 <meta charset="utf-8" />
 <title>Ajax練習</title>
-<script>alert("Found 2 eggs!");</script>
+<script>alert("Found an eggs!");</script>
 <html>
   <script>
-    function test(){
+    function getData(){
 	    
-	    alert("Found 10 eggs!");
-   }
+	var req=new XMLHttpRequest();
+	req.open("get","https://fat-parrot.github.io/nest/egg");
+	    
+	req.onload=function(){
+	var content=document.getElementById("content");
+	content.innerHTML=this.responseText;
+	alert(this.responseText);
+	                    };
+	req.send();
+	    
+                     }
 	    
   </script>
   
@@ -14,7 +23,7 @@
 <body> 
 <h3>Egg</h3>
 <div>
-  <span onclick ="test();">hatch!</span>
+  <span onclick ="getData();">hatch!</span>
     </div>
 
 <div id="content"></div>
