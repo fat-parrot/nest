@@ -1,1 +1,28 @@
-<script>alert('Found an egg!');</script>
+<meta charset="utf-8" />
+<title>Ajax練習</title>
+<script>alert("Found an egg!");</script>
+<html>
+  <script>
+    function getData(){
+  var req=new XMLHttpRequest();
+	req.open("get","http://127.0.0.1:5000/egg");
+	
+      req.onload=function(){
+	var content=document.getElementById("content");
+	content.innerHTML=this.responseText;
+	alert(this.responseText);
+	                     };
+	req.send();
+  </script>
+  
+  <!-- 主畫面如下 -->
+<body> 
+<h3>Egg</h3>
+<div>
+  <span onclick="getData();">hatch!</span>
+    </div>
+
+<div id="content"></div>
+</body>
+  
+</html>
