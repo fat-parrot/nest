@@ -6,9 +6,12 @@
     function getData(){
 	    
 	var req=new XMLHttpRequest();
+	    /*同源*/
 	//req.open("get","https://fat-parrot.github.io/nest/egg");
-	req.open("get","https://fat-parrot.github.io/nest/egg.html");
-	//*req.open("get","https://www.youtube.com/");
+	//req.open("get","https://fat-parrot.github.io/nest/egg.html");
+	    
+	    /*非同源*/
+	req.open("get","https://fluffy-parrot.github.io/nest/egg.html");
 	    
 	req.onload=function(){
 	var content=document.getElementById("content");
